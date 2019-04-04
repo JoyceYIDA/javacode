@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小储的网页</title>
+		<!--
+        	作者：1923589855@qq.com
+        	时间：2019-04-04
+        	描述：表单标签中的其他项
+        	input
+        	     type="test" 文本输入框
+        	     type="password" 密码输入框
+        	     type="radio" 单选按钮
+        	     type="checkbox" 复选框
+        	     type="hidden" 隐藏域
+        	     type="file" 上传文件
+        	     type="submit" 提交按钮
+        	     type="rest" 重置按钮
+        	     type="button" 普通按钮，必须指value
+        	select标签
+        	    option:下拉选项
+        	textarea标签 ：文本域
+        -->
+	</head>
+	<body>
+		<!--from表单中的事件
+        	onsubmit事件：表示表单提交是否成功
+        -->
+        <form action="#" method="get" onsubmit="return checkAll()" >
+        	<!--placeholder的h5属性；给当前input中指定默认值
+            	value也可以但是value中的默认值光标点到框框时不能自动清除
+            -->
+        	用户名:<input type="text" name="username" placeholder="请输入用户名"/>
+        	<br />
+        	密&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="password" name="password" placeholder="请输入密码"/>
+        	<br />
+        	<!--
+            	作者：1923589855@qq.com
+            	时间：2019-04-04
+            	描述：name属性必填要将单选按钮看成同一组信息：指定相同的name属性
+            -->
+        	性别：
+        	<input type="radio" value="男" name="gender"/>男
+        	<input type="radio" value="女" name="gender"/>女
+        	<br />
+        	爱好：
+        	<input type="checkbox" value="唱歌" name="hobit"/>唱歌
+        	<input type="checkbox" value="跳舞" name="hobit"/>跳舞
+        	<input type="checkbox" value="绘画" name="hobit"/>绘画
+        	<input type="checkbox" value="java" name="hobit"/> java
+        	<br />
+        	出生日期：
+        	<input type="date" name="date"/>
+        	<br />
+        	电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:
+        	<!--type="tel"h5的属性  type="date"h5属性
+            -->
+        	<input type="tele" name="phone"/>
+        	<br />
+        	籍贯：
+        	<select name="jg">
+        		<option value="请选择">请选择</option>
+        		<option value="陕西省">陕西省</option>
+        		<option value="山西省">山西省</option>
+        		<option value="山东省">山东省</option>
+        		<option value="四川省">四川省</option>
+        	</select>
+        	<select>
+        	</select>
+        	<br />
+        	<!--
+            	      AugularJs :前端框架
+            	      v1.0版本有继承、MVC以及一些指令
+            	      select2指令：下拉菜单：选多个值
+            -->
+            上传照片：
+            <input type="file" name="photo" /><br />
+            自我描述：
+            <!--rows:指定文本域中的行数
+            	cols:指定文本域中的列数
+            -->
+            <textarea rows="7" cols="27">
+                                本人是天上遗落的明珠......
+            </textarea>
+            <!--隐藏域：没有效果显示但是会携带数据
+            -->
+            <input type="hidden" name="user_id"/>
+            <br />
+            <input type="button" value="注册"/>
+            
+        </form>
+	</body>
+</html>
