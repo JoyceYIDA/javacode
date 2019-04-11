@@ -1,0 +1,28 @@
+
+Map集合
+   Map接口是Java中保存二元偶对象（键值对）的最顶层接口
+   比如账号K和密码V
+   public interface Map<K,V>
+   Map接口中的五个核心方法
+      public V put(K key,V value)：向Map中添加并保存数据
+      public V get(K key):根据指定的key值取得相应的value值；如果没有就返回null;Map中的元素是无序的，所以获取Map中的值没有下标
+      public Set<Map.Entry<K,V>> entrySet():将Map集合变为Set集合
+      public Set<K> keySet():返回所有key值集合，key不能重复
+      public Collection<V> values():返回所有value值，值可以重复
+   Map常用子类：AbstractMap(EnumMap,HashMap,TreeMap) Dictionary(HashTable)
+      HashMap（使用频率最高）：线程不安全
+      1.key和value都可以为null;key即便可以为null，也只能有一个
+      2.key可以找到value，但是value不能获取到key
+      内部结构：可以看作数组和链表结合组成的复合结构
+      TreeMap：
+      Hashtable：
+      value和key都不能为null;同步处理，线程安全
+      ConcurrentHashMap：
+      早期实现是基于分离锁，也就是将内部进行分段（Segment），里面是HashEntry的数组，和HashMap类似，哈希相同的条目也是以链表表形式存储
+      HashEntry内部使用volatile和value字段来保证可见性
+      核心是利用分段设计，在进行并发操作时只需要锁定相应段，这样就有效避免了类似Hashtable整体同步的问题，大大提高了性能
+      在构造的时候，Segment的数量由所谓的concurrentcyLevel决定，默认是16，也可以在相应构造函数直接指定，必须是2的幂数值
+      Map的size方法同样需要关注，它的实现涉及分离锁的一个副作用
+   Map集合使用Iterator输出
+    public Set<Map,Entry<K,V> entrySet();
+
