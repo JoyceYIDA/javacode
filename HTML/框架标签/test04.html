@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	作者：1923589855@qq.com
+        	时间：2019-04-10
+        	描述：表格由table定义，行由<tr>标签定义；列由<td>定义；字母td指的是表格数据table data;
+        		html语言中表格标签只有行的概念，没有列的概念（使用单元格体现列）
+        		表格的表头用<th>定义
+        	        在一些浏览器中，没有内容的表格单元显示得不太好。如果某个单元格是空的（没有内容），
+        	        浏览器可 能无法显示出这个单元格的边框
+        	        这个空的单元格的边框没有被显示出来。为了避免这种情况，在空单元格中添加一个空格占位 符，就可以将边框显示出来。
+        	    caption元素定义表格标题，必须紧跟标题之后定义。只能对每个表格定义一个标题。通常这个标题会被居中于表格 之上。
+        表格的常用属性：
+                边框属性：border
+                宽度高度：width/height
+                对齐方式：align       
+                背景色：bgcolor（html标签的属性）background（CSS的属性）	
+        cellspacing:设置表格的边框线和单元格边沿之间
+        cellpading：单元格和单元格之间的空间
+    单元格的合并：(单元格的属性：)
+          行合并：rowspan
+          列合并：colspan
+          表单标签form表单
+          action：url地址：统一资源定位符
+          URL/URI（http协议：请求头）
+          HTTP1.1（可以反复请求）、1.0（只能访问一次）
+          Method：提交方式
+               Get（不适合敏感数据，提交数据大小有限制，用户数据会在地址栏显示）
+               Post（适合敏感数据，提交的大小没有限制，用户数据不会在地址栏显示）
+           Input必填name属性，给系统后台进行标记
+           单选按钮radio，复选框：checkbox，上传文件：file，隐藏域：hidden，提交：submit，重置：reset
+           普通按钮：type=“button” value=“xx"
+           框架标签：frame：一个frame包含一个html页面
+           当有两个或两个以上的html页面使用框架集frameset
+               rows：横向划分：占当前整个部分百分比
+               cols：竖向划分（从左往右）
+        -->
+		<table border="1px" bgcolor="pink" width="500px" height="300px" cellspacing="0">
+			<caption>信息表</caption>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+			    <th>住址</th>
+			    <th>联系方式</th>
+			</tr>
+		    <tr align="center">
+			   <td rowspan="2">Mark</td>
+			   <td colspan="3">20</td>
+			   <!--<td>1</td>-->
+			   <!--<td>4</td>-->
+		    </tr>
+	     	<tr align="center">
+	       <!-- 	<td>Jackson</td>-->
+		    	<td>18</td>
+		    	<td>2</td>
+		    	<td>5</td>
+		    </tr>
+		    <tr align="center">
+			    <td>&nbsp;</td>
+			    <td>123</td>
+			    <td>3</td>
+			    <td>6</td>
+		    </tr>
+		</table>
+	</body>
+</html>
