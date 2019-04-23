@@ -1,0 +1,88 @@
+线程池(并发框架下用得最多的框架)
+1.线程池的优点：
+1）降低资源消耗；通过重复利用已创建的线程降低线程创建与销毁带来的损耗
+2）提高响应速度；当任务到达时，无需等待线程创建就可以立即执行
+3）提高线程的可管理性；使用线程池可以统一进行线程分配、调度与监控。
+
+2.线程池的继承关系：
+最顶层接口Executor-execute方法可以接收Runnable
+********************************************************************************
+最核心ExecutorService（普通调度池核心接口），继承了Executor
+    submit()可接收Runnable,Callable;返回值都为Future<T>
+    实现类：ThreadPoolExecutor*****(普通调度池核心类)
+
+ScheduledExecutorService继承ExecutorService（定时调度核心接口）
+   schedule(Runnable command,long delay,TimeUnit unit)
+   延迟delay个时间单位后开始执行，可接收Runnable和Callable接口
+   scheduleAtFixedRate(Runnable command,long initialDelay,long period,TimeUtil util);
+   延迟initialDelay个时间单位后开始执行，并且每隔period个时间单位就执行一次。
+   实现类：ScheduledThreadPoolExecutor(定时调度池核心类)
+
+********************************************************************************
+executors(线程池工具类)---内置的四大线程池
+3.线程池核心处理执行：
+组件：核心线程池，阻塞队列，最大线程池，处理策略
+第一步：判断核心线程池是否已满（不管是否有空闲线程），如果未满，创建一个新的线程来执行任务。
+       如果已满，判断是否有空闲线程，有的话将任务分配给空闲线程，否则执行步骤2。
+       【创建线程需要获得全局锁】
+第二步：判断工作队列（阻塞队列BlockingQueue），如果未满，将任务存储在工作队列中等待空闲线程调度。
+       如果工作队列已满，执行步骤3。
+第三步：判断当前线程池是否已达到线程池的线程数量是否已达到最大值，
+       如果没有达到最大值，则创建新的线程来执行任务，否则执行步骤4。
+       【创建线程需要获得全局锁】
+第四步：调用饱和策略来处理此任务。
+
+4.线程池的使用
+  1）手工创建线程池
+   通过ExecutorService来new一个ThreadPoolExecutor
+   public ThreadPoolExecutor(int corePoolSize,
+                                int maximumPoolSize,
+                                long keepAliveTime,
+                                TimeUnit unit,
+                                BlockingQueue<Runnable> workQueue)
+   A：int corePoolSize(核心线程池大小)：当提交一个任务到线程池时，只要核心线程池未达到corePoolSize，
+   创建新线程来执行任务。调用perStartAllCoreThreads(),线程池会提前创建并启动所有核心线程。
+   B：BlockingQueue<Runnable> workQueue(任务队列)：保存等待执行任务的阻塞队列。
+   -ArrayBlockingQueue基于数组的有界阻塞队列，按照FIFO原则对元素进行排序。
+   -LinkedBlockingQueue基于链表的无界阻塞队列，按照FIFO排列元素。吞吐量（速率）要高于ArrayBlockingQueue。
+   内置线程池newFixedThreadPool-固定大小线程池就采用这种队列。
+   -SynchronousQueue：一个不存储元素的无界队列。每个插入删除操作需要等待另一个线程的移除操作，
+   否则插入操作一直处于阻塞状态。吞吐量高于LinkedBlockingQueue。内置线程池newCachedThreadPool-缓存线程池就采用此队列
+   -PriorityBlockingQueue：具有优先级的阻塞队列。
+   C：int maximumPoolSize线程池最大数量
+   D：long keepAliveTime(线程保持活动的时间)
+   线程池的工作线程空闲后，保持存活的时间。
+   任务比较多，并且每个任务执行的时间比较短，可以调大这个参数提高线程利用率。
+   E：RejectedExecutionHandler(饱和处理策略)
+   AbortPolicy：无法处理新任务抛出异常（JDK默认采用此策略）
+   CallerRunsPolicy：使用调用者所在线程来处理任务。
+   DiscardOldestPolicy：丢弃队列中最近的一个任务并执行当前任务
+   DiscardPolicy：不处理任务，丢弃任务，也不报异常。
+调用Future接口的get方法会阻塞其他线程，直到取得当前线程执行完毕后的返回值。(阻塞机制)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
