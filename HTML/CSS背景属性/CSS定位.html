@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js体验</title>
+		<!--
+        	js的重点：dom编程的一些document方法以及js表单验证
+        	表单检验：
+        	1）登陆
+        	2）注册
+        	java script的前身---网景公司的livescript（引擎：可以识别js脚本）
+       -->
+	</head>
+	<body>
+		<!--onsubmit：表单提交是否成功；返回true，表示能够提交，否则提交不成功-->
+		
+		<form action="backed.html" method="post" onsubmit="return checkUserName()">
+			用户名：<input type="test" value="请输入用户名" id="username" name="name" onblur="testBlur()"  onfocus="testFoucs()"/>
+			<span id="username_span" ></span>
+			<br />
+			<input type="submit" value="注册" />
+		</form>
+	</body>
+		<script>
+//			用户名必须要满足一些规则:不符合就要弹出提示框"用户名格式不正确"
+//function checkUserName(){
+//	//需要获取到用户名的内容
+//	var username=document.getElementById("username").value;
+//	//用户名要符合规则：由4-14位的数字或者字母组成（不区分大小写）
+//	var reg=/^[a-zA-Z0-9]{4,14}$/
+////	/^$/以^开头,以$结尾
+////	X{n,};至少出现4次
+//// X{n}:x字符恰好出现n次
+//// X{n,m}X字符至少出现n次,但是不超过m次
+////js内置正则方法:test（username)
+//if(!reg.test(username)){
+//	alert("用户名格式不正确");
+//	return false;
+//}else{
+//	return true;
+//}
+//}
+
+function testFoucs(){
+	var username=document.getElementById("username");
+	username.value="";
+}
+function testBlur(){
+		var username=document.getElementById("username").value;
+		//获取span标签
+		var span =document.getElementById("username_span");
+		if(username!="eric"){
+			span.innerHTML="用户名格式正确".fontcolor("green");
+			
+		}else{
+			span.innerHTML="用户名不符合规则".fontcolor("red");
+		}
+}
+		</script>
+</html>

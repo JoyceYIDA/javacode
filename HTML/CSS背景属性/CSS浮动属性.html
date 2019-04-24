@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS浮动属性</title>
+		
+		<!--CSS浮动属性：符合一种流式布局-->
+		<!--加载页面的时候，按照标签的先后顺序形成一个文档流
+			文档对象（document：js会用到），某个标签设置了浮动属性（float）
+			那么就脱离了当前的文档流，然后后面的元素就随之变化（位置发生变化）
+			
+			清除某个元素的浮动：
+			     clear属性：both 左右两边都不浮动
+			     
+			浮动的框可以向左或者向右移动，直到它的边缘碰到包含框或另一个浮动框的边缘为止
+			由于浮动狂不在文档流中，所以文档的普通流中的块框就像浮动框不存在一样
+		-->
+		<style>
+			#dl1{
+				width: 200px;
+				height: 200px;
+				/*显示边框*/
+				border: 20px solid black;
+				background-color: pink;
+				/*设置左浮动*/
+				/*float: right;*/
+			}
+			#dl2{
+				width: 200px;
+				height: 200px;
+				/*显示边框*/
+				border: 20px solid black;
+				background-color: blueviolet;
+				float: left;
+			}
+			#dl3{
+				width: 200px;
+				height: 200px;
+				/*显示边框*/
+				border: 20px solid black;
+				background-color: greenyellow;
+				float: left;
+			}
+			
+			#clear{
+				/*设置div后面的元素不能随着div1浮动而变化
+				 clear ：both：两边都不浮动（常用）
+				 left：左边不浮动
+				 right：右边不浮动*/
+				/*clear: both;*/
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="dl1">div1</div>
+		<!--在这里加一个div-->
+		<div id="clear"></div>
+		<div id="dl2">div2</div>
+		<div id="dl3">div3</div>
+	</body>
+</html>

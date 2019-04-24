@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS盒子模型</title>
+		<!--盒子：可以将任何标签都看作盒子
+			属性：
+			    盒子的厚度：指定边框宽度（3px）
+			    盒子的容量：盒子width和height
+			    盒子的内边距：padding（盒子的呢你容和边框之间的距离）
+			    盒子的外边距：margin（盒子与盒子之间的距离）
+			    不管是padding还是margin都要遵循CSS边框的属性：默认的方向：上右下左
+			    padding：20px 0 0 10px（向上移动20px，向左移动10px）
+			    想让div1和div2盒子之间分开
+			    在实际布局中，尽量使用margin来
+		-->
+		<style>
+			div{
+				/*设置div的高度和宽度*/
+				width: 200px;
+				height: 200px;
+				border: dashed;
+				padding:20px 0 0 10px;
+			}
+			#dl1{
+				margin:0 0 10px 0;
+			}		
+		</style>
+	</head>
+	<body>
+		<div id="dl1">div1</div>
+		<div id="dl2">div2</div>
+		<div id="dl3">div3</div>
+	</body>
+</html>
