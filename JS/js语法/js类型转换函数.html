@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js的类型转换函数</title>
+		<script>
+			/*
+			 * 类型转换函数
+			 *   parseInt（变量名）/parseFloat(变量名)
+			 *      parseInt(变量名)：string--->整数
+			 *      特点：转换过程中遇到非数值类型转换就停止
+			 *   parseFloat:转换小数
+			 * 
+			 * Java:parseInt()/parseLong()/....
+			 *      
+			 * js（弱类型语言）中的运算符/流程控制语句（switch）
+			 * js引用方式：内部方式 head标签体中引入script标签
+			 *            外部方式 引入外部js文件<script src="外部加载的js文件路径">
+			 *            string类型和number进行比较时，会默认将string转为number再进行比较
+			 * 
+			 */
+			var a="10";
+			//转换前
+			document.write("a的值是"+a+"，数据类型是："+typeof(a)+"<br/>")
+			//开始转换
+			a=parseInt(a);
+		
+			document.write("转换后值是"+a+"，数据类型是："+typeof(b)+"<br/>")
+			//转换前
+			var b="b10b";
+			document.write("a的值是"+b+"，数据类型是："+typeof(b)+"<br/>")
+			//开始转换
+			b=parseInt(b);
+			document.write("转换后值是"+b+"，数据类型是："+typeof(b)+"<br/>")
+			
+			var c="3.14";
+			document.write("a的值是"+c+"，数据类型是："+typeof(c)+"<br/>")
+			c=parseFloat(c);
+			document.write("转换后的值是"+c+"，数据类型是："+typeof(c)+"<br/>")
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+

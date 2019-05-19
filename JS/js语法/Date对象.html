@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Date对象</title>
+		<script>
+		/*
+		 * java:Date日期格式--->日期的文本格式（String） 
+		 * SimpleDateFormat（String pattern）将日期时间格式化
+		 * Date date=new Date()
+		 * Date 对象：
+		 * var 定义Date对象
+		 */
+
+function genDate(){
+	//		创建日期对象
+    var date=new Date();
+//  document.write(date);
+//  方法:获取年份getYear（）[已过时] getFullYear
+//  var year=date.getFullYear();
+//  document.write(year+"年");
+//
+//var mouth=date.getMonth();
+//document.write((mouth+1)+"月");
+//拼接时间字符串
+var dateStr=date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+"&nbsp;&nbsp"+
+            date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+
+//获取span标签对象
+var spanTip=document.getElementById("span_tip");
+//设置span标签对象的innerHTML属性
+spanTip.innerHTML=dateStr;
+}
+
+//定时器：网页定时器
+/*
+ * window.setTimeOut("任务()"，毫秒);每经过多少毫秒后执行一次任务
+ * window.setInterval("任务()"，毫秒);每经过多少毫秒重复执行任务
+ */
+window.setInterval("genDate()",1000);
+
+
+		</script>
+	</head>
+	<body>
+		当前系统时间是：<span id="span_tip"></span>
+	</body>
+</html>

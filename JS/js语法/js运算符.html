@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js中的运算符</title>
+		<script>
+			/*
+			 * js中的运算符：
+			 * 算数运算符：+ - * / %
+			 * 比较运算符：==,<,<=,>,>=
+			 * 逻辑运算符：！，逻辑双与：&& 逻辑双或：||
+			 * 三目（三元）运算符 表达式？true的结果：false的结果
+			 * 
+			 */
+			
+//			var a=1;
+//			var b=3;
+//			/*
+//			 * js是弱类型语言：true，用1来代表，false用0来代表
+//			 */
+//			document.write("求和："(a+b)+"<br/>");
+//			document.write((a==b)+"<br/>");
+			
+			var age=20;
+			document.write((age>18)?"成年人":"未成年");
+			
+			/*
+			 * 1）顺序结构语句
+			 *     js代码一次由上而下加载
+			 * 2）选择结构语句
+			 *    a.
+			 *     if：三种格式
+			 *      if(表达式){
+			 * 	       语句；
+			 * }
+			 *    b.开发中会用到
+			 * if(表达式){
+			 * 	语句一；
+			 * }else{
+			 * 	语句二；
+			 * }
+			 *   switch语句
+			 * 3）循环结构语句
+			 * for、while、do...while
+			 */
+//			if(new Object()){
+//				alert("条件成立")
+//			}else{
+//				alert("条件不成立")
+//			}
+			/*
+			 * if里面表达式如果是number类型，非0，条件成立，否则条件不成立
+			 * 如果是string类型，非空字符串，条件成立；否则不成立
+			 * 如果是boolean类型，true成立；false不成立
+			 * 如果是object类型，非null成立；否则不成立
+			 * 
+			 * 
+			 * switch（表达式）{
+			 * 	  case 选项1：
+			 *         语句1；
+			 *         break；
+			 *    case 选项2：
+			 *         语句二；
+			 *         break；
+			 *     ...
+			 *     default：
+			 *         语句n+1；
+			 *      break；
+			 * }
+			 *  js中switch特点：
+			 *     1）switch语句的结束条件
+			 *          a:遇见break，语句结束
+			 *            如果没有break语句；会出现case穿透
+			 *          b:程序默认执行到末尾（default语句在末尾）
+			 *     2）表达式：string，number...boolean...
+			 *     3）case语句：case后面的值可以是常量，也可以是变量...（java不能出现变量）
+			 *        也可跟表达式（js是弱类型语言）
+			 * 
+			 * 
+			 *  循环结构语句
+			 *     for(初始化变量;判断条件语句;步长语句){
+			 * 	  循环体育局
+			 * };
+			 * 
+			 *  while循环结构语句（不明确循环次数时，使用while循环）
+			 * 变形格式
+			 * 初始化变量；
+			 * while（条件判断语句）{
+			 * 	  循环体语句；
+			 * }
+			 * 
+			 * do-while循环特点（至少执行一次）
+			 * 变形格式:
+			 * 初始化语句;
+			 * do{
+			 * 	循环语句；
+			 * 步长语句；
+			 * }while（条件判断语句）{
+			 * 	  循环体语句；
+			 * }
+			 */
+
+			var i="c";
+			switch(i){
+				case "a":
+				document.write("您选择了a<br/>");
+				break;
+				case "b":
+				document.write("你选择了b<br/>");
+				break;
+				case "c":
+				document.write("您选择了c<br/>");
+				break;
+				default:
+				document.write("没有其它选项<br/>");
+				break;
+			}
+			
+			for(var i=1;i<5;i++){
+				document.write("helloworld<br/>")
+			}
+			while(i<3){
+				document.write("王嘉尔<br/>")
+			}
+			/*
+			 * 会话技术：cookie、session
+			 * 
+			 */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

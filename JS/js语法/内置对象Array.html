@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js内置对象之Array</title>
+		<script>
+			/*
+			 * 创建数组对象（js中的数组对象可以存放任何类型的值）(js中定义数组不会出现越界，他会自动扩容)
+			 * 1.不指定数组长度
+			 * var arr=new Array();
+			 * 2.指定长度
+			 * 3.直接制定具体的元素内容
+			 * 
+			 * 常用方法：join(var str):通过连接符号将数组的内容拼接起来----形成一个新的字符串
+			 * reserve（）：数组对象的反转功能
+			 * 
+			 */
+			
+			var arr=new Array(3);
+			alert(arr.length);
+			arr[0]="hello";
+			arr[1]=true;
+			arr[2]='a';
+			arr[3]=7;
+			arr[4]=3.14;
+			arr[5]=[new Object()]
+			alert(arr.length);
+			
+			for(var i=0;i<arr.length;i++){
+				document.write(arr[i]+"&nbsp;");
+			}
+			document.write("<hr/>")
+			var array =["java","hello","php","r"];
+			var array=array.join("-");
+			document.write(array);
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

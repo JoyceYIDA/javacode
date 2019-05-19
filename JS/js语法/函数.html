@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js的函数</title>
+		<script>
+			/*
+			 * js中哈数定义格式：
+			 *   function 函数名称（形参列表）{
+			 * 	  具体业务；
+			 * }
+			 * 调用函数：
+			 *    单独调用
+			 *    赋值调用
+			 * 注意事项：
+			 *    1）定义函数function 函数名（）：形式参数不能用var定义
+			 *    2）在js的函数定义中，可以有return语句，返回值类型无需定义，将具体计算结果返回即可
+			 *    3）在js中，函数的定义不存在方法重载的概念
+			 *    4）函数的定义不管是大于形式参数还是小于形式参数；都会被调用
+			 *    5）在js中的函数定义，存在默认的数组；arguments数组
+			 *       作用：将实际参数的值和形式参数一一映射(绑定)
+			 */
+			function add(a,b){
+				var result=a+b;
+				document.write("两个数据求和的结果是："+result);
+//              return result;
+                
+			}
+//			会覆盖前面函数
+			function add(a,b,c){
+				var result=a+b+c;
+				document.write(result);
+			}
+			
+//			单独调用
+           add(10,20,30,40);//会默认去掉数组后面的元素；实际参数个数小于形参个数---》NaN
+//         赋值调用
+//         var s=add(10,20);
+//         document.write("求和结果是："+s);
+           
+           
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

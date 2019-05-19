@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js之for-in语句</title>
+		<script>
+			/*
+			 * java:for(类型 变量；数组名称/对象名称（集合）0){
+			 * 	 输出变量...
+			 * }
+			 * java中增强for--->替代迭代器的Iterator
+			 * 
+			 * js中的for-in格式
+			 * for（var 变量名 in 数组对象/自定义对象）{
+			 * 	输出这个变量即可
+			 * }
+			 */
+			
+//			js中的数组---》Array
+var arr=[10,20,30,4];
+for(var i=0;i<arr.length;i++){
+	document.write(arr[i]+"&nbsp;&nbsp;")
+}
+document.write("<hr/>");
+for(var i in arr){
+	document.write(arr[i]+"&nbsp;&nbsp;")
+}
+//自定义一个Person对象
+function Person(name,age){
+	this.name=name;
+	this.age=age;
+}
+//创建一个对象
+var p=new Person("eric",18);
+//将Person对象的属性遍历出来:for-in:对象名[变量]
+for(var i in p){
+//	输出对象属性
+	document.write(p[i]+"<br/>");
+}
+
+//打印出五行星星
+//for循环嵌套
+for(var i=0;i<5;i++){
+	for(var j=0;j<=i;j++){
+		document.write("*&nbsp;");
+	}
+	document.write("<br/>");
+}
+/*
+ * with语句格式
+ *   with（文档对象：document）{
+ * 	    具体逻辑；
+ * }
+ * 
+ */
+with(document){
+   for(var i=0;i<5;i++){
+	for(var j=0;j<=i;j++){
+		write("*&nbsp;");
+	}
+	write("<br/>");
+}
+}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
