@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:33:28 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-2 94
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:33:42 +0800] "GET /jsp/demo2.jsp HTTP/1.1" 200 99 http-bio-8080-exec-4 1030
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:35:30 +0800] "GET /jsp/demo2.jsp HTTP/1.1" 200 127 http-bio-8080-exec-1 74
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:40:08 +0800] "GET /jsp/demo2.jsp HTTP/1.1" 200 125 http-bio-8080-exec-7 71
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:40:41 +0800] "GET /jsp/demo2.jsp HTTP/1.1" 200 125 http-bio-8080-exec-3 3
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:41:00 +0800] "GET /jsp/demo3.jsp HTTP/1.1" 200 130 http-bio-8080-exec-5 72
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:48:39 +0800] "GET /jsp/demo3.jsp HTTP/1.1" 200 138 http-bio-8080-exec-10 63
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:48:40 +0800] "GET /jsp/demo3.jsp HTTP/1.1" 200 138 http-bio-8080-exec-10 2
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:49:10 +0800] "GET /jsp/demo3.jsp HTTP/1.1" 200 138 http-bio-8080-exec-2 97
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:49:11 +0800] "GET /jsp/demo3.jsp HTTP/1.1" 200 138 http-bio-8080-exec-1 1
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:49:27 +0800] "GET /jsp/demo3.jsp HTTP/1.1" 200 142 http-bio-8080-exec-5 67
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:54:07 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-9 5
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:54:10 +0800] "GET /product_list.htm HTTP/1.1" 304 - http-bio-8080-exec-9 1
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:54:11 +0800] "GET /getProductById!id=1 HTTP/1.1" 404 989 http-bio-8080-exec-9 1
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:54:14 +0800] "GET /getProductById?id=2 HTTP/1.1" 404 979 http-bio-8080-exec-10 1
+0:0:0:0:0:0:0:1 - - [18/Jul/2019:20:54:16 +0800] "GET /getProductById?id=2 HTTP/1.1" 404 979 http-bio-8080-exec-10 1

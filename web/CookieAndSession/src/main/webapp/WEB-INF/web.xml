@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1"
+         metadata-complete="true">
+
+    <welcome-file-list>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>HelloCookie</servlet-name>
+        <servlet-class>czy.cookie.a_hello.HelloCookie</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloCookie</servlet-name>
+        <url-pattern>/cook1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RememberServlet</servlet-name>
+        <servlet-class>czy.cookie.b_rem.RememberServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RememberServlet</servlet-name>
+        <url-pattern>/rem1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetProductServlet</servlet-name>
+        <servlet-class>czy.cookie.c_web.GetProductServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetProductServlet</servlet-name>
+        <url-pattern>/getpro</url-pattern>
+    </servlet-mapping>
+    
+    <!--清空浏览记录-->
+    <servlet>
+        <servlet-name>ClearHistoryServlet</servlet-name>
+        <servlet-class>czy.cookie.c_web.ClearHistoryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClearHistoryServlet</servlet-name>
+        <url-pattern>/clear</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>SessionScope1</servlet-name>
+        <servlet-class>czy.cookie.d_sessionscope.SessionScope1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SessionScope1</servlet-name>
+        <url-pattern>/scope1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionScope2</servlet-name>
+        <servlet-class>czy.cookie.d_sessionscope.SessionScope2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SessionScope2</servlet-name>
+        <url-pattern>/scope2</url-pattern>
+    </servlet-mapping>
+
+    <!--加入购物车的servlet-->
+    <servlet>
+        <servlet-name>Add2CartServlet</servlet-name>
+        <servlet-class>czy.cookie.c_web.Add2CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Add2CartServlet</servlet-name>
+        <url-pattern>/add2</url-pattern>
+    </servlet-mapping>
+
+    <!--清空购物车-->
+    <servlet>
+        <servlet-name>ClearCartServlet</servlet-name>
+        <servlet-class>czy.cookie.c_web.ClearCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClearCartServlet</servlet-name>
+        <url-pattern>/cc</url-pattern>
+    </servlet-mapping>
+</web-app>
